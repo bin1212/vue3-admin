@@ -18,7 +18,10 @@ import 'element-plus/lib/theme-chalk/index.css'
 import 'dayjs/locale/zh-cn'
 
 export type Size = 'default' | 'medium' | 'small' | 'mini'
-export default (app: App) => {
+interface ElementOptions {
+  size: Size
+}
+export default (app: App, options: ElementOptions):void => {
   locale(lang)
   const components = [
     ElButton,
@@ -42,6 +45,6 @@ export default (app: App) => {
   app.config.globalProperties.$prompt = ElMessageBox.prompt
 
   app.config.globalProperties.$ELEMENT = {
-    size: 'medium'
+    size: options.size
   }
 }

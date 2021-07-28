@@ -13,7 +13,7 @@ export const key: InjectionKey<Store<IRootState>> = Symbol()
 const persistedstate = createPersistedState({
   storage: window.sessionStorage,
   key: 'vuex_app',
-  paths:['app.sidebar.opened']
+  paths:['app.sidebar.opened','app.size']
 })
 
 export default createStore<IRootState>({
